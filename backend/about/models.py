@@ -4,13 +4,13 @@ from wagtail.models import Page
 from wagtail.admin.panels import FieldPanel
 from wagtail.api import APIField
 
-class HomePage(Page):
-    banner_text = models.TextField(blank = True)
+class AboutPage(Page):
+    description = models.TextField(blank=True)
     
     content_panels = Page.content_panels + [
-        FieldPanel("banner_text")
+        FieldPanel("description")
     ]
     
     api_fields = [
-        APIField("banner_text"),
+        APIField("description"),
     ]
