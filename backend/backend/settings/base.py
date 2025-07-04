@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     "about",
     "user_guide",
     "testimonials",
-    "footer",
     "wagtail.api.v2",
     "rest_framework",
     "search",
