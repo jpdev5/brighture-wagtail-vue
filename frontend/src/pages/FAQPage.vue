@@ -1,10 +1,10 @@
 <template>
-  <div class="flex items-center justify-center q-gutter-md">
+  <div class="flex items-center justify-center column q-gutter-md">
     <div
       class="flex items-center justify-center"
       style="
         height: 300px;
-        width: 100%;
+        width: 100vw;
         background-color: #d1d1d2;
         flex-direction: column;
         border-bottom: 0.5px solid #757575;
@@ -38,6 +38,14 @@
         <div v-for="i in 8" :key="i">
           <div class="bg-grey-4 q-pa-sm q-px-xl text-center">FAQ Number: {{ i }}</div>
         </div>
+      </div>
+    </div>
+
+    <div class="flex items-center column q-gutter-md">
+      <h5>Frequently Asked Questions Lists</h5>
+
+      <div v-for="i in 5" :key="i">
+        <div class="bg-grey-4 q-pa-sm q-px-xl text-center">FAQ Number: {{ i }}</div>
       </div>
     </div>
   </div>
