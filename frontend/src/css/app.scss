@@ -2,6 +2,15 @@
 body {
   background-color: $body-bg;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 .custom-header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
