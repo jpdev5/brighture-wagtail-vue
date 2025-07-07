@@ -36,9 +36,7 @@
 
       <div class="q-gutter-md" style="display: grid; grid-template-columns: repeat(4, 1fr)">
         <div v-for="i in 8" :key="i">
-          <div class="bg-grey-4 q-pa-sm text-center" style="border: 0.5px solid #757575">
-            FAQ Number: {{ i }}
-          </div>
+          <div class="bg-grey-4 q-pa-sm q-px-xl text-center">FAQ Number: {{ i }}</div>
         </div>
       </div>
     </div>
