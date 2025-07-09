@@ -4,9 +4,13 @@
       class="flex items-center justify-center w-full"
       style="
         height: 300px;
-        background-color: #d1d1d2;
+        background-image:
+          linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/faq_bg.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
         flex-direction: column;
-        border-bottom: 0.5px solid #757575;
+        border-bottom: 0.2em solid #757575;
       "
     >
       <div>
@@ -33,7 +37,7 @@
     <div class="flex items-center column q-gutter-md">
       <h5>FAQs Content</h5>
 
-      <div class="grid grid-cols-2 gap-3">
+      <div class="grid grid-cols-2 gap-8">
         <div v-for="(faq, index) in faqContents" :key="index">
           <div class="bg-slate-50 py-4 px-7 rounded-md">
             <h5 class="!text-lg !font-semibold mb-2 text-[#373518]">{{ faq.label }}</h5>
@@ -47,48 +51,49 @@
       </div>
     </div>
 
-    <div class="flex justify-center items-center w-full flex-col gap-3">
+    <div class="flex justify-center items-center w-full flex-col gap-5">
       <h5>Need Help?</h5>
 
-      <q-list v-for="(questions, index) in needHelpContents" :key="index" bordered class="w-1/2">
-        <q-expansion-item
-          group="somegroup"
-          :label="`${index} Item`"
-          class="w-full"
-          :default-opened="index === 0"
-        >
-          <template v-slot:header>
-            <q-item-section avatar>
-              <q-avatar>
-                <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-              </q-avatar>
-            </q-item-section>
-
-            <q-item-section> {{ questions.label }} </q-item-section>
-          </template>
-
-          <q-card>
-            <q-card-section v-for="(item, idx) in questions.content" :key="idx">
-              {{ item }}
-            </q-card-section>
-          </q-card>
-        </q-expansion-item>
-      </q-list>
+      <div class="flex justify-center items-center w-full flex-col gap-3">
+        <q-list v-for="(questions, index) in needHelpContents" :key="index" bordered class="w-1/2">
+          <q-expansion-item
+            group="somegroup"
+            :label="`${questions.label}`"
+            icon="help"
+            class="w-full"
+            :default-opened="index === 0"
+          >
+            <q-card>
+              <q-card-section v-for="(item, idx) in questions.content" :key="idx">
+                {{ item }}
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+        </q-list>
+      </div>
     </div>
 
-    <div class="flex justify-center w-full px-52">
-      <div class="grid grid-cols-4 gap-5 place-items-center">
-        <q-card v-for="i in 8" :key="i" class="my-card" flat bordered>
-          <img src="https://cdn.quasar.dev/img/mountains.jpg" />
+    <div id="blog" class="flex justify-center w-full px-52 gap-8">
+      <h5>Trending Topics</h5>
+
+      <div class="grid grid-cols-4 gap-5">
+        <q-card
+          v-for="(topics, idx) in trendingTopics"
+          :key="idx"
+          class="my-card hover:drop-shadow-lg cursor-pointer"
+          flat
+          bordered
+          @click="redirect('https://www.facebook.com/')"
+        >
+          <img :src="topics.image" :alt="topics.title" />
 
           <q-card-section>
-            <div class="text-h6">Our Changing Planet</div>
-            <div class="text-subtitle2">by John Doe</div>
+            <div class="text-h6">{{ topics.title }}</div>
+            <div class="text-subtitle2">{{ topics.author }}</div>
           </q-card-section>
 
           <q-card-section class="q-pt-none">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            {{ topics.summary }}
           </q-card-section>
         </q-card>
       </div>
@@ -100,6 +105,11 @@
 import { ref } from 'vue';
 import { faqContents } from 'src/components/data/faq-page';
 import { needHelpContents } from 'src/components/data/faq-page';
+import { trendingTopics } from 'src/components/data/faq-page';
 
 const text = ref('');
+
+function redirect(url: string) {
+  window.open(url, '_blank');
+}
 </script>

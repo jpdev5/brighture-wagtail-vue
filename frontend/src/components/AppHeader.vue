@@ -1,11 +1,12 @@
 <template>
   <q-header class="q-px-lg custom-header flex justify-between items-center">
-    <q-tabs no-caps align="left" class="text-dark">
+    <div class="row">
       <img src="/brighture_bk.png" alt="brighture logo" class="cursor-pointer" />
-      <q-route-tab to="/#" label="Page One" />
-      <q-route-tab to="/#" label="Page Two" />
-      <q-route-tab to="/#" label="Page Three" />
-    </q-tabs>
+
+      <q-tabs v-for="(link, idx) in nav_links" :key="idx" no-caps align="left" class="text-dark">
+        <q-route-tab :to="link.link" :label="link.label" exact />
+      </q-tabs>
+    </div>
 
     <q-btn no-caps flat dense class="flex items-center" padding="none">
       <div class="flex items-center q-gutter-md">
@@ -30,3 +31,41 @@
     </q-btn>
   </q-header>
 </template>
+
+<script lang="ts" setup>
+interface INavLinks {
+  label: string;
+  link: string;
+}
+
+const nav_links: INavLinks[] = [
+  {
+    label: 'Home',
+    link: '/',
+  },
+  {
+    label: 'About Us',
+    link: '/about',
+  },
+  {
+    label: 'Available Positions',
+    link: '/available-positions',
+  },
+  {
+    label: 'Position Details',
+    link: '/position-details',
+  },
+  {
+    label: 'Testimonials',
+    link: '/testimonials',
+  },
+  {
+    label: 'Inquiry',
+    link: '/inquiry',
+  },
+  {
+    label: 'Blog',
+    link: '/#blog',
+  },
+];
+</script>

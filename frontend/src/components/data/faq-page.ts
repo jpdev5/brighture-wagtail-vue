@@ -3,6 +3,13 @@ interface IFaq {
   content: string[];
 }
 
+interface ITopic {
+  title: string;
+  author: string;
+  summary: string;
+  image: string;
+}
+
 export const needHelpContents: IFaq[] = [
   {
     label: 'How do I create an account?',
@@ -86,5 +93,60 @@ export const faqContents: IFaq[] = [
       'You can find support in our community forums, GitHub issues, or by joining our Discord server.',
       'We also have a comprehensive documentation section to help you with common questions and issues.',
     ],
+  },
+];
+
+export const trendingTopics: ITopic[] = [
+  {
+    title: 'The Future of Renewable Energy',
+    author: 'by Sarah Lee',
+    summary:
+      'Explore how solar, wind, and hydro power are transforming the global energy landscape.',
+    image: 'https://cdn.quasar.dev/img/mountains.jpg',
+  },
+  {
+    title: 'AI Innovations Shaping Our World',
+    author: 'by Mark Johnson',
+    summary:
+      'Discover the latest breakthroughs in artificial intelligence and their impact on industries.',
+    image: 'https://cdn.quasar.dev/img/mountains.jpg',
+  },
+  {
+    title: 'The Rise of Remote Work',
+    author: 'by Emily Chen',
+    summary: 'See how remote work trends are changing workplaces and redefining productivity.',
+    image: 'https://cdn.quasar.dev/img/mountains.jpg',
+  },
+  {
+    title: 'Climate Change: What You Can Do',
+    author: 'by Alex Martinez',
+    summary:
+      'Simple, actionable steps you can take to reduce your carbon footprint and help the planet.',
+    image: 'https://cdn.quasar.dev/img/mountains.jpg',
+  },
+  {
+    title: 'Top Travel Destinations for 2025',
+    author: 'by Linda Park',
+    summary: 'Check out the most popular and upcoming travel hotspots for adventurous travelers.',
+    image: 'https://cdn.quasar.dev/img/mountains.jpg',
+  },
+  {
+    title: 'Health & Wellness Trends You Should Know',
+    author: 'by Kevin Ramirez',
+    summary: 'From mindful eating to tech-enabled fitness, here’s what’s trending in wellness.',
+    image: 'https://cdn.quasar.dev/img/mountains.jpg',
+  },
+  {
+    title: 'The Evolution of Smart Homes',
+    author: 'by Zoe Carter',
+    summary: 'Explore the latest smart home technologies that are making life more convenient.',
+    image: 'https://cdn.quasar.dev/img/mountains.jpg',
+  },
+  {
+    title: 'Financial Planning in the Digital Age',
+    author: 'by Daniel Kim',
+    summary:
+      'Learn modern strategies for managing your finances and growing your wealth digitally.',
+    image: 'https://cdn.quasar.dev/img/mountains.jpg',
   },
 ];
