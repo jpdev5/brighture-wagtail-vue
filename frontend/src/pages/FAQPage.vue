@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center column q-gutter-md">
+  <div class="flex items-center justify-center flex-col gap-5">
     <div
       class="flex items-center justify-center"
       style="
@@ -41,14 +41,14 @@
       </div>
     </div>
 
-    <div class="flex items-center column q-gutter-md">
-      <q-list bordered>
+    <div class="flex justify-center w-full">
+      <q-list bordered class="w-full max-w-52">
         <q-expansion-item
           group="somegroup"
           icon="explore"
           label="First"
+          class="w-full"
           default-opened
-          class="w-72"
         >
           <q-card>
             <q-card-section>
