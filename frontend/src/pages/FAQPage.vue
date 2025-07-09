@@ -1,10 +1,9 @@
 <template>
   <div class="flex items-center justify-center flex-col gap-5">
     <div
-      class="flex items-center justify-center"
+      class="flex items-center justify-center w-full"
       style="
         height: 300px;
-        width: 100vw;
         background-color: #d1d1d2;
         flex-direction: column;
         border-bottom: 0.5px solid #757575;
@@ -41,14 +40,16 @@
       </div>
     </div>
 
-    <div class="flex justify-center w-full">
-      <q-list bordered class="w-full max-w-52">
+    <div class="flex justify-center items-center w-full flex-col gap-3">
+      <h5>Questions</h5>
+
+      <q-list v-for="i in 4" :key="i" bordered class="w-1/2">
         <q-expansion-item
           group="somegroup"
           icon="explore"
-          label="First"
+          :label="`${i} Item`"
           class="w-full"
-          default-opened
+          :default-opened="i === 1"
         >
           <q-card>
             <q-card-section>
@@ -59,6 +60,19 @@
           </q-card>
         </q-expansion-item>
       </q-list>
+    </div>
+
+    <div>
+      <q-card class="my-card">
+        <img src="https://cdn.quasar.dev/img/mountains.jpg" />
+
+        <q-card-section>
+          <div class="text-h6">Our Changing Planet</div>
+          <div class="text-subtitle2">by John Doe</div>
+        </q-card-section>
+
+        <q-card-section class="q-pt-none"> Test me </q-card-section>
+      </q-card>
     </div>
   </div>
 </template>
