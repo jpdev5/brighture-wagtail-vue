@@ -74,7 +74,7 @@
     </div>
 
     <div id="blog" class="flex justify-center w-full px-52 gap-8">
-      <h5>Trending Topics</h5>
+      <h5>Trending</h5>
 
       <div class="grid grid-cols-4 gap-5">
         <q-card
