@@ -80,6 +80,20 @@ export const faqContents: IFaq[] = [
       'Once installed, you can log in to the admin panel and start creating your content.',
     ],
   },
+  {
+    label: 'Is Brighture free to use?',
+    content: [
+      'Yes, Brighture is completely free and open-source.',
+      'You can download it from our GitHub repository and contribute to its development.',
+    ],
+  },
+  {
+    label: 'Where can I find support for Brighture?',
+    content: [
+      'You can find support in our community forums, GitHub issues, or by joining our Discord server.',
+      'We also have a comprehensive documentation section to help you with common questions and issues.',
+    ],
+  },
 ];
 
 export const trendingTopics: ITopic[] = [
